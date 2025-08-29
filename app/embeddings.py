@@ -1,7 +1,7 @@
 import os
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.embeddings import OllamaEmbeddings
-from langchain.document_loaders import UnstructuredMarkdownLoader
+from langchain_community.document_loaders import UnstructuredMarkdownLoader
 import chromadb
 from app.config import DATA_PATH, EMBEDDING_MODEL, CHROMA_DB_PATH
 from app.utils import log_info, log_error
