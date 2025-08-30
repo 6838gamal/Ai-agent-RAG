@@ -1,5 +1,8 @@
 #python-dotenv=1.0.1
 streamlit
+sentence-transformers
+transformers
+torch
 langchain
 markdown
 langchain-community
