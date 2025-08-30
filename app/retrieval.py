@@ -4,6 +4,19 @@ from app.embeddings import setup_chroma, load_documents, generate_embeddings
 from app.config import CHROMA_DB_PATH, EMBEDDING_MODEL
 from app.utils import log_info
 
+from langchain_community.embeddings import HuggingFaceEmbeddings
+
+#
+def get_embeddings():
+    return HuggingFaceEmbeddings(
+        model_name="sentence-transformers/all-MiniLM-L6-v2",
+        model_kwargs={'device': 'cpu'},
+        encode_kwargs={'normalize_embeddings': False}
+    )
+
+#
+
+
 # Setup ChromaDB
 chunks = load_documents()
 embeddings = generate_embeddings(chunks)
