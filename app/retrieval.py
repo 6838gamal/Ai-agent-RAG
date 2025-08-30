@@ -23,7 +23,18 @@ embeddings = generate_embeddings(chunks)
 client, collection = setup_chroma(chunks, embeddings)
 
 # Initialize embedding function correctly
-embedding_function = OllamaEmbeddings(model=EMBEDDING_MODEL)  # ✅ Corrected
+#embedding_function = OllamaEmbeddings(model=EMBEDDING_MODEL)  # ✅ Corrected
+
+
+#
+
+# Instead of using OllamaEmbeddings, use:
+embeddings = get_embeddings()
+vectorstore = Chroma(persist_directory=persist_directory, embedding_function=embeddings)
+
+
+#
+
 
 # Initialize retriever
 retriever = Chroma(
