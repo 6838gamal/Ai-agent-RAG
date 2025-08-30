@@ -7,7 +7,7 @@ transformers
 torch
 langchain
 markdown
-langchain-community
+langchain_community
 chromadb
 ollama
 unstructured
